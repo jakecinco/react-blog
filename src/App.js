@@ -6,6 +6,9 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+//import Greeting from './Greeting';
+import Home from './Home';
+import Compose from './Compose';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -19,25 +22,25 @@ import './App.css';
 export default function App() {
   return (
     <Router>
-      <div className = "main-app-container">
+      <div className="main-app-container">
         <nav className="navbar">
           <div className="nav-container">
             <div className="nav-app-header">
               <p className="navbar-brand">DAILY JOURNAL</p>
             </div>
             {/* <div className="nav-header-links"> */}
-              <ul className="nav-app-links">
-                <li id="home"><Link to="/" style={{ textDecoration: 'none' }}>HOME</Link></li>
-                <li id="about"><Link to="/about" style={{ textDecoration: 'none' }}>ABOUT</Link></li>
-                <li id="contact"><Link to="/contact" style={{ textDecoration: 'none' }}>CONTACT</Link></li>
-              </ul>
+            <ul className="nav-app-links">
+              <li id="home"><Link to="/" style={{ textDecoration: 'none' }}>HOME</Link></li>
+              <li id="about"><Link to="/about" style={{ textDecoration: 'none' }}>ABOUT</Link></li>
+              <li id="contact"><Link to="/contact" style={{ textDecoration: 'none' }}>CONTACT</Link></li>
+            </ul>
             {/* </div> */}
           </div>
         </nav>
-        
 
 
-        <hr className="style-one"/>
+
+        <hr className="style-one" />
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -47,15 +50,10 @@ export default function App() {
           of them to render at a time
         */}
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/about"><About /></Route>
+          <Route path="/contact"><Contact /></Route>
+          <Route path="/compose" component={Compose}/>
         </Switch>
       </div>
       <div className="footer-padding">
@@ -70,13 +68,7 @@ export default function App() {
 // You can think of these components as "pages"
 // in your app.
 
-function Home() {
-  return (
-    <div>
-      <h2 className="switch-header">Home</h2>
-    </div>
-  );
-}
+
 
 function About() {
   return (
