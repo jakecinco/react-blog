@@ -1,26 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-
-const useStyles = makeStyles(theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-    },
-    dense: {
-        marginTop: theme.spacing(2),
-    },
-    menu: {
-        width: 200,
-    },
-    button: {
-        margin: theme.spacing(1),
-    }
-}));
 
 
 const useFetch = (url) => {
@@ -41,39 +19,24 @@ const useFetch = (url) => {
 function Home() {
     const URL = '/allposts';
     const posts = useFetch(URL);
-    const classes = useStyles();
     return (
         <React.Fragment>{posts.map(post => (
             <form className="" key={post._id}>
-                <TextField
-                    id="outlined-full-width"
-                    label="Title"
-                    style={{ margin: 8 }}
-                    placeholder=""
-                    //helperText=""
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    className={classes.textField}
-                    name="postTitle"
-                    value={post.title} >{post.title}</TextField>
-                <TextField
-                    id="outlined-textarea"
-                    label="Post"
-                    placeholder=""
-                    multiline
-                    fullWidth
-                    rows=""
-                    column="30"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
+                <h2 name="postTitle"
+                    value={post.title} >{post.title}</h2>
+                <p  className="post-body"
                     name="postBody"
                     value={post.content}
-                >{post.content}</TextField>
-
+                >{post.content}</p>
+                <div class="three-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </form>
-        ))
+
+        )
+        )
         }
         </React.Fragment>
     );

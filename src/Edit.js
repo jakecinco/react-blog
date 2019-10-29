@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 
 
 
-function Compose(props) {
+function Edit(props) {
     const classes = useStyles();
     const initialFormState = { postTitle: '', postBody: '' }
     const [posts, setPost] = useState(initialFormState);
@@ -97,4 +97,4 @@ function Compose(props) {
 }
 
 
-export default Compose;
+export default Edit;

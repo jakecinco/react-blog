@@ -9,15 +9,7 @@ import './App.css';
 //import Greeting from './Greeting';
 import Home from './Home';
 import Compose from './Compose';
-
-// This site has 3 pages, all of which are rendered
-// dynamically in the browser (not server rendered).
-//
-// Although the page does not ever refresh, notice how
-// React Router keeps the URL up to date as you navigate
-// through the site. This preserves the browser history,
-// making sure things like the back button and bookmarks
-// work properly.
+import Edit from './Edit';
 
 export default function App() {
   return (
@@ -26,7 +18,7 @@ export default function App() {
         <nav className="navbar">
           <div className="nav-container">
             <div className="nav-app-header">
-              <p className="navbar-brand">DAILY JOURNAL</p>
+              <p className="navbar-brand" style={{ textDecoration: 'none' }}>DAILY JOURNAL</p>
             </div>
             {/* <div className="nav-header-links"> */}
             <ul className="nav-app-links">
@@ -54,6 +46,7 @@ export default function App() {
           <Route path="/about"><About /></Route>
           <Route path="/contact"><Contact /></Route>
           <Route path="/compose" component={Compose}/>
+          <Route path="/edit" component={Edit}/>
         </Switch>
       </div>
       <div className="footer-padding">

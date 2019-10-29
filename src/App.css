@@ -3,7 +3,7 @@
 }
 
 .main-app-container {
-  padding: 1.5rem;
+  padding: 2.5rem;
 }
 
 html {
@@ -12,10 +12,15 @@ html {
 }
 
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
+.post-body {
+  text-align: justify;
+  
+  letter-spacing: 1px;
+}
 
 /* NAVBAR MENU TOP */
 ul {
@@ -29,6 +34,10 @@ ul {
   align-content: flex-start;
   align-items: flex-start;
   
+}
+
+.navbar-brand {
+
 }
 
 .nav-app-header {
@@ -55,7 +64,7 @@ ul {
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 5px;
 
 }
@@ -70,6 +79,23 @@ hr.style-one {
   height: 1px;
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  padding-bottom: 10px;
+}
+
+/* 3 DOTS */
+.three-dots {
+  text-align: center;
+  opacity: 50%;
+  padding: 10px;
+}
+
+.three-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 90%;
+  background: rgb(182, 178, 178);
+  display: inline-block;
+  margin: 0 5px;
 }
 
 /* SWITCH HEADER */
